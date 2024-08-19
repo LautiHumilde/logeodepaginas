@@ -61,7 +61,12 @@ body {
   background-color: #f0f0f0;
 }
 
-.encabezado span {
+.fila-usuario span {
+  flex: 1;
+  text-align: center;
+}
+
+.encabezado {
   font-weight: bold;
 }
 
@@ -71,6 +76,7 @@ input {
   border: 1px solid #ccc;
   border-radius: 5px;
   box-sizing: border-box;
+  margin-bottom: 10px;
 }
 
 button {
@@ -85,4 +91,40 @@ button {
 
 button:hover {
   background-color: #e65c00;
+}
+
+/* Estilo para el modal de edición */
+.modal-edicion {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  padding: 20px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  z-index: 1000;
+}
+
+.modal-edicion h3 {
+  margin-top: 0;
+  color: #333;
+}
+
+.modal-edicion input {
+  margin-bottom: 10px;
+}
+
+.modal-edicion button {
+  margin-right: 10px;
+}
+
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 999;
 }

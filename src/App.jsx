@@ -10,6 +10,7 @@ function App() {
 
   useEffect(() => {
     const datos = JSON.parse(localStorage.getItem('usuarios')) || [];
+    console.log('Datos cargados desde localStorage:', datos);
     setDatosGuardados(datos);
   }, []);
 
@@ -40,6 +41,7 @@ function App() {
           );
           setDatosGuardados(nuevosDatosGuardados);
           localStorage.setItem('usuarios', JSON.stringify(nuevosDatosGuardados));
+          console.log('Datos modificados:', nuevosDatosGuardados);
           alert('Datos modificados con éxito.');
         } else {
           alert('El nombre ya existe.');
@@ -55,6 +57,7 @@ function App() {
 
     setDatosGuardados(nuevosDatosGuardados);
     localStorage.setItem('usuarios', JSON.stringify(nuevosDatosGuardados));
+    console.log('Datos guardados:', nuevosDatosGuardados);
   };
 
   const eliminarUsuario = (nombre) => {
@@ -63,6 +66,7 @@ function App() {
       const nuevosDatosGuardados = datosGuardados.filter(usuario => usuario.nombre !== nombre);
       setDatosGuardados(nuevosDatosGuardados);
       localStorage.setItem('usuarios', JSON.stringify(nuevosDatosGuardados));
+      console.log('Usuario eliminado:', nuevosDatosGuardados);
       alert('Usuario eliminado con éxito.');
     }
   };
